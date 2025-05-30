@@ -3,4 +3,4 @@ opencv-python
 numpy
 matplotlib
 flask
-cv2
+gunicorn
