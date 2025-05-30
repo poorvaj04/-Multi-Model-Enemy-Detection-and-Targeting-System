@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detection and Targeting Enemy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- 🔹 Background video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🔹 Animated title -->
+  <h1 class="animated-text">Detection and Targeting Enemy</h1>
+
+  <!-- 🔹 Upload form -->
+  <form method="POST" action="/" enctype="multipart/form-data">
+    <input type="file" name="video" accept="video/mp4" required>
+    <button type="submit">Upload and Detect</button>
+  </form>
+
+  <!-- 🔹 Display output video if exists -->
+  {% if output_video %}
+    <h2 class="animated-text">Detection Result:</h2>
+    <video controls autoplay>
+      <source src="{{ url_for('static', filename='output_video_terr.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  {% endif %}
+
+</body>
+</html>
